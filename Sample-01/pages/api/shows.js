@@ -4,7 +4,7 @@ export default withApiAuthRequired(async function shows(req, res) {
   // If your Access Token is expired and you have a Refresh Token
   // `getAccessToken` will fetch you a new one using the `refresh_token` grant
   const { accessToken } = await getAccessToken(req, res, {
-    scopes: ['read:products']
+    scopes: ['read:shows']
   });
   const response = await fetch('https://auth0-nextjs-test.vercel.app/api/shows', {
     headers: {
